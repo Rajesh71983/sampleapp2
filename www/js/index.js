@@ -64,7 +64,9 @@ var app = {
 			buttons : {
                 INSTALL: function() {
 					//navigator.app.exitApp();
+					$(this).dialog('close');
 					cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');
+					
                 }
             }
         });
