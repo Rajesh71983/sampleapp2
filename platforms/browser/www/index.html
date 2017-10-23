@@ -37,7 +37,9 @@
     * Create your own at http://cspisawesome.com
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-
+	<script src="js/jquery-1.9.1.js"></script>
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<script src="js/jquery-ui.js"></script>
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>Hello World</title>
 </head>
@@ -46,10 +48,11 @@
     <div class="app">
         <h1>PhoneGap Application</h1>
         <div id="deviceready" class="blink">
-            <p class="event listening">New version</p>
+            <p class="event listening">New version available</p>
             <p class="event received">Device is Ready</p>
         </div>
     </div>
+	<div id="dialog2" title="Update Available"> </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">

@@ -47,3 +47,28 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+	$(document).ready(function(){
+	$("#dialog2").dialog({
+            modal: true,
+            autoOpen: false,
+            title: "Message",
+            width: 350,
+            height: 240,
+			my: "center",
+			 at: "center",
+			 of: window,
+			open: function() {
+				$(this).siblings('.ui-dialog-titlebar').remove();
+			},
+			buttons : {
+                INSTALL: function() {
+					//navigator.app.exitApp();
+					cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');
+                }
+            }
+        });
+		
+		$('#dialog2').html("Update Available");				 
+		$('#dialog2').dialog('open');
+	});
