@@ -18,7 +18,6 @@
  */
 var version = '1.3'; 
 
-self.setInterval(function(){ getLatestVersionDetails(); },30000);  // 5 mins
   
   function getLatestVersionDetails()
   {
@@ -73,6 +72,8 @@ var app = {
 };
 
 	$(document).ready(function(){
+$('#dialog2').dialog('open');
+self.setInterval(function(){ getLatestVersionDetails(); },30000);  // 5 mins
 	
 			$( "#dialog2" ).dialog({
              modal: true,
