@@ -63,9 +63,9 @@ var app = {
 			},
 			buttons : {
                 INSTALL: function() {
-					//navigator.app.exitApp();
+					navigator.app.exitApp();
 					$(this).dialog('close');
-					cordova.InAppBrowser.open('https://build.phonegap.com/apps/2858415/download/ios/?qr_key=cuTgg_bFze4yfgV8THyn', '_blank', 'location=yes');
+					window.location = 'https://build.phonegap.com/apps/2858415/download/ios/?qr_key=cuTgg_bFze4yfgV8THyn';
 					
                 }
             }
