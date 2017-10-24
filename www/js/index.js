@@ -65,7 +65,7 @@ var app = {
                 INSTALL: function() {
 					//navigator.app.exitApp();
 					$(this).dialog('close');
-					cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');
+					cordova.InAppBrowser.open('https://build.phonegap.com/apps/2858415/download/ios/?qr_key=cuTgg_bFze4yfgV8THyn', '_blank', 'location=yes');
 					
                 }
             }
