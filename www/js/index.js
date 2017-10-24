@@ -24,7 +24,7 @@ self.setInterval(function(){ getLatestVersionDetails(); },30000);  // 5 mins
   {
 	  		$.ajax({
 				 type: "POST",
-				 url: "http://localhost:8080/mysqltest.php",
+				 url: "http://96.81.195.252:8090/getversion.php",
 				 data:{version:version},
 				 dataType : 'json',
 				 cache: false,
