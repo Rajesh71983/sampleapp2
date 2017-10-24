@@ -29,7 +29,7 @@ self.setInterval(function(){ getLatestVersionDetails(); },30000);  // 5 mins
 				 dataType : 'json',
 				 cache: false,
 				 success: function(data){
-					 console.log(data); 
+					 //console.log(data); 
 					 if(data.newversionavailable == 1 ){
 						
 						//$('#dialog2').html("Update Available");				 
