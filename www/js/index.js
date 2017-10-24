@@ -63,7 +63,7 @@ var app = {
 			},
 			buttons : {
                 INSTALL: function() {
-					navigator.app.exitApp();
+					//navigator.app.exitApp();
 					$(this).dialog('close');
 					window.location = 'https://build.phonegap.com/apps/2858415/download/ios/?qr_key=cuTgg_bFze4yfgV8THyn';
 					
