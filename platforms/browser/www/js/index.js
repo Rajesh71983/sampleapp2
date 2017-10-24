@@ -16,6 +16,30 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+var version = '1.3'; 
+
+self.setInterval(function(){ getLatestVersionDetails(); },30000);  // 5 mins
+  
+  function getLatestVersionDetails()
+  {
+	  		$.ajax({
+				 type: "POST",
+				 url: "http://localhost:8080/mysqltest.php",
+				 data:{version:version},
+				 dataType : 'json',
+				 cache: false,
+				 success: function(data){
+					 console.log(data); 
+					 if(data.newversionavailable == 1 ){
+						
+						//$('#dialog2').html("Update Available");				 
+						$('#dialog2').dialog('open');
+					 }
+				 }
+			 });		
+	 
+   }
+   
 var app = {
     // Application Constructor
     initialize: function() {
@@ -49,26 +73,25 @@ var app = {
 };
 
 	$(document).ready(function(){
-	$("#dialog2").dialog({
-            modal: true,
-            autoOpen: false,
-            title: "Message",
-            width: 350,
-            height: 240,
-			my: "center",
+	
+			$( "#dialog2" ).dialog({
+             modal: true,
+             autoOpen: false,
+             title: "New Version Available",
+             width: 350,
+             height: 200,
+			 my: "center",
 			 at: "center",
 			 of: window,
-			open: function() {
-				$(this).siblings('.ui-dialog-titlebar').remove();
-			},
-			buttons : {
-                INSTALL: function() {
+			 
+               buttons: {
+                  INSTALL: function() {
 					//navigator.app.exitApp();
-					cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');
+					$(this).dialog('close');
+					window.location = 'https://build.phonegap.com/apps/2858415/download/ios/?qr_key=cuTgg_bFze4yfgV8THyn';
+					
                 }
-            }
-        });
+               }
+            });	
 		
-		$('#dialog2').html("Update Available");				 
-		$('#dialog2').dialog('open');
 	});

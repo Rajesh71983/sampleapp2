@@ -42,21 +42,26 @@
 	<script src="js/jquery-ui.js"></script>
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>Hello World</title>
+	<style>
+	.ui-dialog-titlebar-close {
+    visibility: hidden;
+}
+	</style>
 </head>
 
 <body>
     <div class="app">
         <h1>PhoneGap Application</h1>
         <div id="deviceready" class="blink">
-            <p class="event listening">New version available</p>
-            <p class="event received">Device is Ready</p>
+            <p class="event listening">New version available here</p>
+            <p class="event received">Device is Ready to update</p>
         </div>
     </div>
-	<div id="dialog2" title="Update Available"> </div>
+	<div id="dialog2" title="New Version Available"> Please click install to get the latest version. </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
-        app.initialize();
+        
     </script>
 </body>
 
