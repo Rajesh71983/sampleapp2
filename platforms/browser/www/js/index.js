@@ -16,29 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var version = '1.3'; 
 
-self.setInterval(function(){ getLatestVersionDetails(); },30000);  // 5 mins
-  
-  function getLatestVersionDetails()
-  {
-	  		$.ajax({
-				 type: "POST",
-				 url: "http://localhost:8080/mysqltest.php",
-				 data:{version:version},
-				 dataType : 'json',
-				 cache: false,
-				 success: function(data){
-					 console.log(data); 
-					 if(data.newversionavailable == 1 ){
-						
-						//$('#dialog2').html("Update Available");				 
-						$('#dialog2').dialog('open');
-					 }
-				 }
-			 });		
-	 
-   }
    
 var app = {
     // Application Constructor
@@ -93,5 +71,29 @@ var app = {
                 }
                }
             });	
+			
+			var version = '1.1'; 
+
+			  self.setInterval(function(){ getLatestVersionDetails(); },30000);  // 5 mins
+			  
+			  function getLatestVersionDetails()
+			  {
+						$.ajax({
+							 type: "POST",
+							 url: "http://96.81.195.252:8090/getversion.php",
+							 data:{version:version},
+							 dataType : 'json',
+							 cache: false,
+							 success: function(data){
+								 console.log(data); 
+								 if(data.newversionavailable == 1 ){
+									
+									//$('#dialog2').html("Update Available");				 
+									$('#dialog2').dialog('open');
+								 }
+							 }
+						 });		
+				 
+			   }
 		
 	});
